@@ -27,8 +27,11 @@ def init():
 
 
 def finish():
-    global active
+    global active, panel, small_ball, large_ball
     active = False
+    panel = None
+    small_ball = None
+    large_ball = None
 
 
 def handle_event(event, boy):

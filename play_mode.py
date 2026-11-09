@@ -31,7 +31,7 @@ def handle_events():
 def init():
     global boy
 
-
+    item_mode.init()
     boy = Boy()
     game_world.add_oject(boy)
 
@@ -71,6 +71,7 @@ def resume():
 
 def finish():
     global boy
+    item_mode.finish()
     game_world.clear()
     boy = None
 
