@@ -18,6 +18,7 @@ class Boy:
         self.dir = 0
         self.face_dir = 1
         self.pressed_keys = set()
+        self.ball_scale = 1
 
         self.machine = Machine(
             model=self,
@@ -47,7 +48,7 @@ class Boy:
         self.frame = 0
 
     def fire_ball(self):
-        ball = Ball(self.x, self.y, self.face_dir * 10)
+        ball = Ball(self.x, self.y, self.face_dir * 10, self.ball_scale)
         game_world.add_oject(ball)
 
     def handle_event(self, event):
