@@ -1,6 +1,7 @@
 from pico2d import *
 import game_framework
 import game_world
+import item_mode
 from boy import Boy
 from grass import Grass
 
@@ -19,6 +20,9 @@ def handle_events():
             import pause_mode
             game_framework.push_mode(pause_mode)
             return
+        elif item_mode.handle_event(event, boy):
+            # 창을 열어도 같은 프레임의 이동·발사·키 해제를 계속 처리한다.
+            continue
         else:
             boy.handle_event(event)
 
