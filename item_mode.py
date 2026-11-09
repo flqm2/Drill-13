@@ -44,6 +44,7 @@ def handle_event(event, boy):
         return True
     if active and event.type == SDL_KEYDOWN and event.key in OPTIONS:
         boy.ball_scale = OPTIONS[event.key]
+        active = False
         return True
     return False
 
